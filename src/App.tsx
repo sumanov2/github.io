@@ -5,12 +5,10 @@ import { Philosophy } from './components/Philosophy';
 import { TrainingMethods } from './components/TrainingMethods';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
-import { GitHubExportModal } from './components/GitHubExportModal';
 import { Language } from './types';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>('mk');
-  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
 
   const handleToggleLanguage = () => {
     setLanguage((prev) => (prev === 'mk' ? 'latin' : 'mk'));
@@ -41,14 +39,6 @@ export default function App() {
 
       {/* Semantic Footer */}
       <Footer
-        language={language}
-        onOpenExportModal={() => setIsExportModalOpen(true)}
-      />
-
-      {/* GitHub Pages Clean Export Modal */}
-      <GitHubExportModal
-        isOpen={isExportModalOpen}
-        onClose={() => setIsExportModalOpen(false)}
         language={language}
       />
     </div>

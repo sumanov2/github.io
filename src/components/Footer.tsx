@@ -1,14 +1,13 @@
 import React from 'react';
 import { CONTACT_INFO } from '../data/content';
 import { Language } from '../types';
-import { Phone, Mail, MapPin, Download, Code2 } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 interface FooterProps {
   language: Language;
-  onOpenExportModal: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) => {
+export const Footer: React.FC<FooterProps> = ({ language }) => {
   const currentYear = new Date().getFullYear();
 
   const brandMain = language === 'mk' ? 'ШУМАНОВ' : 'SHUMANOV';
@@ -19,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) =
       <div className="max-w-6xl mx-auto">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-neutral-850">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12 border-b border-neutral-850">
           
           {/* Brand Info */}
           <div className="space-y-4">
@@ -46,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) =
             </div>
           </div>
 
-          {/* Quick Nav Links (Removed Schedule & Locations) */}
+          {/* Quick Nav Links */}
           <div>
             <h4 className="font-cinzel text-xs font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-red-600 pl-2">
               {language === 'mk' ? 'Брза Навигација' : 'Navigation'}
@@ -116,41 +115,17 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenExportModal }) =
             </ul>
           </div>
 
-          {/* GitHub.io Clean Export */}
-          <div className="bg-neutral-950 p-4 rounded-xs border border-neutral-850">
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase mb-2">
-              <Code2 className="w-4 h-4" />
-              <span>GitHub Pages (github.io)</span>
-            </div>
-            <p className="text-[11px] text-neutral-400 leading-relaxed mb-3">
-              {language === 'mk'
-                ? 'Дизајнот е компатибилен за хостирање на GitHub Pages со чист HTML5, CSS Responsive Grid и Vanilla JS.'
-                : 'Built with clean semantic HTML5, Responsive CSS Grid, and zero external dependencies for GitHub Pages.'}
-            </p>
-            <button
-              onClick={onOpenExportModal}
-              className="w-full py-2 px-3 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-red-600 text-white text-[11px] font-bold uppercase tracking-wider rounded-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-            >
-              <Download className="w-3 h-3 text-red-500" />
-              <span>{language === 'mk' ? 'Преземи за github.io' : 'Export for github.io'}</span>
-            </button>
-          </div>
-
         </div>
 
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-400">
           <div>
-            &copy; {currentYear} Боева Система Шуманов (Combat Systema Shumanov).
+            &copy; {currentYear} Боева Система Шуманов (Combat Systema Shumanov). Сите права се задржани.
           </div>
 
           <div className="flex items-center gap-4">
             <span className="text-neutral-400">
               {language === 'mk' ? 'Скопје, Македонија' : 'Skopje, Macedonia'}
-            </span>
-            <span className="text-red-600 font-bold">●</span>
-            <span className="text-neutral-400">
-              Clean Semantic HTML & CSS Grid
             </span>
           </div>
         </div>
