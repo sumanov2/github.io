@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
   const currentYear = new Date().getFullYear();
 
   const brandMain = language === 'mk' ? 'ШУМАНОВ' : 'SHUMANOV';
-  const brandSub = language === 'mk' ? 'БОЕВА СИСТЕМА' : 'COMBAT SYSTEM';
+  const brandSub = language === 'mk' ? 'БОЕВА СИСТЕМА' : 'COMBAT SYSTEMA';
 
   return (
     <footer id="contact" className="bg-black border-t-2 border-neutral-900 text-neutral-400 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative">

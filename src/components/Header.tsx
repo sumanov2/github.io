@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   const brandMain = language === 'mk' ? 'ШУМАНОВ' : 'SHUMANOV';
-  const brandSub = language === 'mk' ? 'БОЕВА СИСТЕМА' : 'COMBAT SYSTEM';
+  const brandSub = language === 'mk' ? 'БОЕВА СИСТЕМА' : 'COMBAT SYSTEMA';
 
   return (
     <header
